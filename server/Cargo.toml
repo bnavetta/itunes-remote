@@ -1,0 +1,11 @@
+[package]
+name = "itunes-rs"
+version = "0.1.0"
+authors = ["Ben Navetta <ben.navetta@gmail.com>"]
+
+[dependencies]
+cocoa = "~0.1"
+objc = "~0.1"
+
+[lib]
+name = "itunes"
