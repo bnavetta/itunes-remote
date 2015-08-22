@@ -1,4 +1,8 @@
 Cython ~= 0.23
+twine
+wheel
+
 # -e hg+https://bitbucket.org/ronaldoussoren/objective.metadata#egg=objective.metadata # python2 only
 -e iTunesLibrary
+-e pytunes
 -e itunes-server
