@@ -35,6 +35,10 @@ do {
     
     print("iTunes \(library.applicationVersion) (API v\(library.apiMajorVersion).\(library.apiMinorVersion))");
     
+    let itLib = try iTunesLibrary()
+    itLib.indexLibrary()
+    itLib.waitForIndexing()
+    
     // API endpoint exposing artwork?
     
     let song = library.search({$0.title == "Sunday Bloody Sunday"}).first!;

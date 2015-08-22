@@ -91,6 +91,10 @@ class iTunesLibrary {
         }
     }
     
+    func waitForIndexing() {
+        self.operationQueue.waitUntilAllOperationsAreFinished()
+    }
+    
     func searchTracks(predicate: ITLibMediaItem -> Bool) -> [ITLibMediaItem] {
         return self.tracks.filter(predicate)
     }
@@ -120,18 +124,23 @@ private class BuildIndex : NSOperation {
     }
     
     override func main() {
+        let startTime = NSDate()
         if self.cancelled {
             return
         }
         
         for track in self.tracks {
-            if !self.artists.contains({$0.name == track.artist.name}) {
+            if !self.artists.contains({$0.name == track.artist?.name}) {
                 self.artists.append(track.artist);
             }
             
-            if !self.albums.contains({$0.title == track.album.title && $0.albumArtist == track.album.albumArtist}) {
+            if !self.albums.contains({$0.title == track.album?.title && $0.albumArtist == track.album?.albumArtist}) {
                 self.albums.append(track.album);
             }
         }
+        
+        let runTime = startTime.timeIntervalSinceNow;
+        print("Indexing took \(runTime) seconds");
+        
     }
 }
