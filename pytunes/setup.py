@@ -1,6 +1,7 @@
 from setuptools import setup, find_packages
 from codecs import open
 from os import path
+import sys
 
 here = path.abspath(path.dirname(__file__))
 
@@ -10,6 +11,15 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
 with open(path.join(here, 'src', 'pytunes', 'version.py')) as f:
     code = compile(f.read(), 'version.py', 'exec')
     exec(code)
+
+requirements = [
+    'iTunesLibrary ~= 1.0',
+    'pyobjc-framework-ScriptingBridge ~= 3.0.4',
+    'six ~= 1.9.0'
+]
+
+if sys.version_info <= (3,):
+    requirements.append('enum34')
 
 setup(
     name='pytunes',
@@ -34,10 +44,6 @@ setup(
     keywords='itunes osx',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    install_requires=[
-        'iTunesLibrary ~= 1.0',
-        'pyobjc-framework-ScriptingBridge ~= 3.0.4',
-        'six ~= 1.9.0'
-    ],
+    install_requires=requirements,
     tests_require = ['pytest ~= 2.7.2']
 )
