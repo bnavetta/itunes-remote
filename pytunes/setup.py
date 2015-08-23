@@ -13,9 +13,9 @@ with open(path.join(here, 'src', 'pytunes', 'version.py')) as f:
     exec(code)
 
 requirements = [
-    'iTunesLibrary ~= 1.0',
     'pyobjc-framework-ScriptingBridge ~= 3.0.4',
-    'six ~= 1.9.0'
+    'six ~= 1.9.0',
+    'pandas ~= 0.16.2',
 ]
 
 if sys.version_info <= (3,):

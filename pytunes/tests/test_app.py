@@ -41,6 +41,7 @@ def test_volume(app):
 
 def test_player_position(app):
     app.play(song_id)
+    time.sleep(1)
     app.player_position = 90
     assert app.player_position == 90
 
@@ -56,3 +57,9 @@ def test_state(app):
     assert app.player_state == PlayerState.playing
     app.play_pause()
     assert app.player_state == PlayerState.paused
+
+def test_playlist(app):
+    app.play(playlist_id)
+    time.sleep(1)
+    assert app.current_playlist == playlist_id
+    assert app.current_track is not None

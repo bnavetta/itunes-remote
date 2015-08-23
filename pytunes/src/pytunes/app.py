@@ -54,7 +54,7 @@ class ITunesApp(object):
     @property
     def current_playlist(self):
         playlist = self._itunes_app.currentPlaylist()
-        if playlist is not None:
+        if playlist is not None and playlist.persistentID() is not None:
             return PersistentID(playlist.persistentID())
         else:
             return None
@@ -123,10 +123,10 @@ class ITunesApp(object):
 
     def play(self, persistent_id):
         item = self._track(persistent_id)
-        if item is None:
+        if item is None or item.persistentID() is None:
             item = self._playlist(persistent_id)
 
-        if item is not None:
+        if item is not None and item.persistentID() is not None:
             item.playOnce_(True)
         else:
             pass # TODO: error
