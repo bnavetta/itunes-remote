@@ -1,6 +1,11 @@
 Cython ~= 0.23
 twine
 wheel
+tox
+Sphinx
+invoke
+
+pytest ~= 2.7.2
 
 # -e hg+https://bitbucket.org/ronaldoussoren/objective.metadata#egg=objective.metadata # python2 only
 -e iTunesLibrary

@@ -7,7 +7,9 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
-execfile(path.join(here, 'pytunes', 'version.py'))
+with open(path.join(here, 'src', 'pytunes', 'version.py')) as f:
+    code = compile(f.read(), 'version.py', 'exec')
+    exec(code)
 
 setup(
     name='pytunes',
@@ -30,11 +32,12 @@ setup(
         'Programming Language :: Objective C',
     ],
     keywords='itunes osx',
-    packages=find_packages(exclude=['contrib', 'docs', 'tests*']),
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     install_requires=[
         'iTunesLibrary ~= 1.0',
         'pyobjc-framework-ScriptingBridge ~= 3.0.4',
         'six ~= 1.9.0'
     ],
-
+    tests_require = ['pytest ~= 2.7.2']
 )
