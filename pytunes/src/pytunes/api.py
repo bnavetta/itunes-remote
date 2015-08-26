@@ -18,18 +18,22 @@ class PersistentID(object):
             value: the raw persistentID value, either as a number or as a hexadecimal string
         """
         if isinstance(value, six.integer_types):
-            assert value > 0, 'PersistentID values are unsigned'
             self.value = value
-        else:
+        elif isinstance(value, six.string_types):
             self.value = int(value, 16)
+        else:
+            raise TypeError("Expected string or integer")
 
     @property
     def hex(self):
         return '{:X}'.format(self.value)
 
     def __str__(self):
-        return "PersistentID[{}]".format(self.hex)
+        return self.hex
 
+    def __repr__(self):
+        return "PersistentID[{}]".format(self.hex)
+    
     def __eq__(self, other):
         if not isinstance(other, PersistentID):
             return NotImplemented

@@ -44,6 +44,9 @@ setup(
     keywords='itunes osx',
     packages=find_packages('src'),
     package_dir={'': 'src'},
+    package_data={'pytunes': ['itunes-indexer']},
+    eager_resources=['pytunes/itunes-indexer'],
+    zip_safe=True,
     install_requires=requirements,
-    tests_require = ['pytest ~= 2.7.2']
+    tests_require=['pytest ~= 2.7.2']
 )
