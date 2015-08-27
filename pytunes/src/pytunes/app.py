@@ -143,6 +143,12 @@ class ITunesApp(object):
     def play_pause(self):
         self._itunes_app.playpause()
 
+    def fast_forward(self):
+        self._itunes_app.fastForward()
+
+    def rewind(self):
+        self._itunes_app.rewind()    
+
     @property
     def _library(self):
         return self._itunes_app.sources()[0]
