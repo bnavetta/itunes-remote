@@ -53,3 +53,31 @@ class VolumeAPI(MethodView):
         return self.get()
 
 control.add_url_rule('/volume', view_func=VolumeAPI.as_view('volume'))
+
+class CurrentTrackAPI(MethodView):
+    def get(self):
+        return jsonify(persistent_id=app.current_track)
+
+    def put(self):
+        json = get_json()
+        if not 'persistent_id' in json:
+            raise InvalidUsage('Must specify persistent ID of track to play')
+        persistent_id = PersistentID(json['persistent_id'])
+        app.play(persistent_id)
+        return self.get()
+
+control.add_url_rule('/current-track', view_func=CurrentTrackAPI.as_view('current_track'))
+
+class CurrentPlaylistAPI(MethodView):
+    def get(self):
+        return jsonify(persistent_id=app.current_playlist)
+
+    def put(self):
+        json = get_json()
+        if not 'persistent_id' in json:
+            raise InvalidUsage('Must specify persistent ID of track to play')
+        persistent_id = PersistentID(json['persistent_id'])
+        app.play(persistent_id)
+        return self.get()
+
+control.add_url_rule('/current-playlist', view_func=CurrentPlaylistAPI.as_view('current_playlist'))
