@@ -68,6 +68,7 @@ class ITunesApp(object):
     def previous_track(self):
         self._itunes_app.previousTrack()
 
+    # TODO: would it be possible to check this stuff via the menu?
     def set_shuffle(self, shuffle):
         '''
         Enable or disable shuffling.
@@ -147,7 +148,7 @@ class ITunesApp(object):
         self._itunes_app.fastForward()
 
     def rewind(self):
-        self._itunes_app.rewind()    
+        self._itunes_app.rewind()
 
     @property
     def _library(self):

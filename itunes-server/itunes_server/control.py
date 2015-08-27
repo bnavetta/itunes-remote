@@ -1,6 +1,8 @@
+from numbers import Rational
+
 from flask import Blueprint, jsonify, request, abort
 from flask.views import MethodView
-from pytunes import ITunesApp, PersistentID, PlayerState
+from pytunes import ITunesApp, PersistentID, PlayerState, ShuffleMode, RepeatMode
 
 from .errors import InvalidUsage
 from .json import get_json
@@ -54,6 +56,8 @@ class VolumeAPI(MethodView):
 
 control.add_url_rule('/volume', view_func=VolumeAPI.as_view('volume'))
 
+# TODO: expose full info (or at least more) from library for get operation
+
 class CurrentTrackAPI(MethodView):
     def get(self):
         return jsonify(persistent_id=app.current_track)
@@ -92,3 +96,45 @@ class CurrentPlaylistAPI(MethodView):
         return self.get()
 
 control.add_url_rule('/current-playlist', view_func=CurrentPlaylistAPI.as_view('current_playlist'))
+
+class ShuffleAPI(MethodView):
+    def put(self):
+        json = get_json()
+        if 'enabled' in json:
+            enabled = json['enabled']
+            if not isinstance(enabled, bool):
+                raise InvalidUsage('Expected boolean for "enabled", got {}'.format(enabled))
+            app.set_shuffle(enabled)
+        if 'mode' in json:
+            mode = ShuffleMode[json['mode']]
+            app.set_shuffle_mode(mode)
+        return ('', 204)
+
+control.add_url_rule('/shuffle', view_func=ShuffleAPI.as_view('shuffle'))
+
+class RepeatAPI(MethodView):
+    def put(self):
+        json = get_json()
+        if not 'mode' in json:
+            raise InvalidUsage('Missing repeat mode')
+        mode = RepeatMode[json['mode']]
+        app.set_repeat_mode(mode)
+        return ('', 204)
+
+control.add_url_rule('/repeat', view_func=RepeatAPI.as_view('repeat'))
+
+class PositionAPI(MethodView):
+    def get(self):
+        return jsonify(position=app.player_position)
+
+    def put(self):
+        json = get_json()
+        if not 'position' in json:
+            raise InvalidUsage('Missing "position" key')
+        position = json['position']
+        if not isinstance(position, Rational):
+            raise InvalidUsage('Expected number for "position", got {}'.format(position))
+        app.player_position = position
+        return self.get()
+
+control.add_url_rule('/position', view_func=PositionAPI.as_view('position'))
