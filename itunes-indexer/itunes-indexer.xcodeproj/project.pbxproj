@@ -40,6 +40,8 @@
 		B5D5F6891B8CA9AF00EFA036 /* MusicDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MusicDataManager.h; sourceTree = "<group>"; };
 		B5D5F68A1B8CA9AF00EFA036 /* MusicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataManager.m; sourceTree = "<group>"; };
 		B5D5F68C1B8CB54400EFA036 /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = ../../../../../Library/Frameworks/iTunesLibrary.framework; sourceTree = "<group>"; };
+		B5E8B8AB1B8EAC9E004B05B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E8B8AC1B8EADF0004B05B1 /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,8 @@
 				B5D5F6891B8CA9AF00EFA036 /* MusicDataManager.h */,
 				B5D5F68A1B8CA9AF00EFA036 /* MusicDataManager.m */,
 				B5D5F6881B8CA99400EFA036 /* DataManager */,
+				B5E8B8AB1B8EAC9E004B05B1 /* Info.plist */,
+				B5E8B8AC1B8EADF0004B05B1 /* entitlements.plist */,
 			);
 			path = "itunes-indexer";
 			sourceTree = "<group>";
@@ -295,10 +299,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F49E62550427001554D62FB /* Pods-itunes-indexer.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/itunes-indexer/entitlements.plist";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"FMDB\"",
+					"-l\"sqlite3\"",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$(SRCROOT)/itunes-indexer/Info.plist",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -308,10 +323,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65F90C1865B6ACE9E4605AFF /* Pods-itunes-indexer.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/itunes-indexer/entitlements.plist";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"FMDB\"",
+					"-l\"sqlite3\"",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"$(SRCROOT)/itunes-indexer/Info.plist",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

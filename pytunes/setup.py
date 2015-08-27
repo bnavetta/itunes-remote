@@ -13,9 +13,10 @@ with open(path.join(here, 'src', 'pytunes', 'version.py')) as f:
     exec(code)
 
 requirements = [
-    'pyobjc-framework-ScriptingBridge ~= 3.0.4',
-    'six ~= 1.9.0',
-    'pandas ~= 0.16.2',
+    'pyobjc-framework-ScriptingBridge ~= 3.0',
+    'six ~= 1.9',
+    'sqlalchemy ~= 1.0',
+    'appdirs ~= 1.0'
 ]
 
 if sys.version_info <= (3,):
@@ -48,5 +49,5 @@ setup(
     eager_resources=['pytunes/itunes-indexer'],
     zip_safe=True,
     install_requires=requirements,
-    tests_require=['pytest ~= 2.7.2']
+    tests_require=['pytest ~= 2.7']
 )

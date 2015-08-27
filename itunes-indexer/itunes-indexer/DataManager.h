@@ -27,4 +27,6 @@ typedef BOOL(^DatabaseUpdateBlock)(FMDatabase* db);
 
 - (NSArray*)fetchObjectsOfClass:(Class<DatabaseObject>)cls withQueryBlock:(DatabaseQueryBlock)queryBlock;
 
+- (void)close;
+
 @end

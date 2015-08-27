@@ -27,9 +27,14 @@
     return self;
 }
 
-- (void)dealloc
+- (void)close
 {
     [self.dbQueue close];
+}
+
+- (void)dealloc
+{
+    [self close];
 }
 
 - (NSArray *)fetchObjectsOfClass:(Class<DatabaseObject>)cls withQueryBlock:(DatabaseQueryBlock)queryBlock
@@ -44,10 +49,12 @@
 
 - (void)executeUpdateInTransaction:(DatabaseUpdateBlock)updateBlock {
     [self.dbQueue inTransaction:^(FMDatabase *db, BOOL *rollback) {
-        *rollback = !updateBlock(db); // updateBlock returns YES for success
-        if (*rollback)
+        BOOL success = updateBlock(db);
+        
+        if (!success)
         {
             NSLog(@"Database Error: %@", [db lastErrorMessage]);
+            *rollback = YES;
         }
     }];
 }

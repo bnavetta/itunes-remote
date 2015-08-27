@@ -8,7 +8,26 @@
 
 #import "MusicDataManager.h"
 
+@interface MusicDataManager ()
+
+@property NSDateFormatter* dateFormatter;
+
+@end
+
 @implementation MusicDataManager
+
+- (instancetype)initWithPath:(NSString *)path {
+    if (self = [super initWithPath:path])
+    {
+        // http://oleb.net/blog/2011/11/working-with-date-and-time-in-cocoa-part-2/
+        self.dateFormatter = [[NSDateFormatter alloc] init];
+        self.dateFormatter.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"UTC"];
+        self.dateFormatter.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+        self.dateFormatter.locale = [NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"];
+        self.dateFormatter.dateFormat = @"yyyy'-'MM'-'dd'T'HH':'mm':'ss'Z'";
+    }
+    return self;
+}
 
 - (void)createSchema
 {
@@ -34,7 +53,9 @@
 {
     [self executeUpdateInTransaction:^BOOL(FMDatabase *db)
     {
+        NSLog(@"Clearing index database...");
         NSString* sql = @"DELETE FROM artist; DELETE FROM album; DELETE FROM song; DELETE FROM playlist; DELETE FROM playlist_items";
+        NSLog(@"Done!");
         return [db executeStatements:sql];
     }];
 }
@@ -63,14 +84,21 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
 - (void)indexLibrary:(ITLibrary *)library
 {
     [self executeUpdateInTransaction:^BOOL(FMDatabase *db) {
+        [db setDateFormat:self.dateFormatter];
+        
+        NSLog(@"Generating index...");
+        
        // Clear out playlist items in case any tracks were removed
         if (![db executeStatements:@"DELETE FROM playlist_items"])
         {
+            NSLog(@"Error emptying playlist items: %@", [db lastErrorMessage]);
             return NO;
         }
         
         NSMutableSet<NSString*>* insertedArtists = [NSMutableSet set];
         NSMutableSet<NSString*>* insertedAlbums = [NSMutableSet set];
+        
+        NSLog(@"Processing %lu items", library.allMediaItems.count);
         
         for (ITLibMediaItem* item in library.allMediaItems)
         {
@@ -82,6 +110,7 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
             {
                 if (![db executeUpdate:@"INSERT OR REPLACE INTO artist (name) VALUES (?)", artistName])
                 {
+                    NSLog(@"Error indexing artist <%@>: %@", artistName, [db lastErrorMessage]);
                     return NO;
                 }
                 
@@ -111,6 +140,7 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
                 
                 BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO album (title, rating, disc_number, disc_count, compilation, album_artist) VALUES (?, ?, ?, ?, ?, ?)", albumTitle, @(album.rating), @(album.discNumber), @(album.discCount), @(album.compilation), albumArtist];
                 if (!result) {
+                    NSLog(@"Error indexing album <%@>: %@", albumTitle, [db lastErrorMessage]);
                     return NO;
                 }
                 
@@ -118,14 +148,18 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
             }
             
             NSString* title = item.title ?: @"Unknown";
+            id lastPlayedDate = item.lastPlayedDate ?: [NSNull null];
+            id releaseDate = item.releaseDate ?: [NSNull null];
             
-//            NSLog(@"Inserting song: %@, %@, %@, %@, %ld, %@, %@, %llu, %lu, %lu, %lu, %@, %@, %@, %lu", item.persistentID, item.title, item.artist.name, item.composer, (long)item.rating, item.album.title, item.genre, (unsigned long long)item.fileSize, (unsigned long)item.totalTime, (unsigned long)item.trackNumber, (unsigned long)item.playCount, item.lastPlayedDate, item.location.absoluteString, item.releaseDate, (unsigned long)item.year);
-            BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO song (persistent_id, title, artist, composer, rating, album, genre, file_size, total_time, track_number, play_count, last_played_date, location, release_date, year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", item.persistentID, title, artistName, item.composer, @(item.rating), albumTitle, item.genre, @(item.fileSize), @(item.totalTime), @(item.trackNumber), @(item.playCount), item.lastPlayedDate, item.location.absoluteString, item.releaseDate, @(item.year)];
+            BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO song (persistent_id, title, artist, composer, rating, album, genre, file_size, total_time, track_number, play_count, last_played_date, location, release_date, year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", item.persistentID, title, artistName, item.composer, @(item.rating), albumTitle, item.genre, @(item.fileSize), @(item.totalTime), @(item.trackNumber), @(item.playCount), lastPlayedDate, item.location.absoluteString, releaseDate, @(item.year)];
             if (!result)
             {
+                NSLog(@"Error indexing song <%@>: %@", title, [db lastErrorMessage]);
                 return NO;
             }
         }
+        
+        NSLog(@"Processing %lu playlists", library.allPlaylists.count);
         
         for (ITLibPlaylist* playlist in library.allPlaylists)
         {
@@ -134,6 +168,7 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
             BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO playlist (persistent_id, name, visible) VALUES (?, ?, ?)", playlist.persistentID, playlist.name, @(playlist.visible)];
             if (!result)
             {
+                NSLog(@"Error indexing playlist <%@>: %@", playlist.name, [db lastErrorMessage]);
                 return NO;
             }
             
@@ -144,10 +179,13 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
                 BOOL result = [db executeUpdate:@"INSERT INTO playlist_items (playlist_id, item_id) VALUES (?, ?)", playlist.persistentID, item.persistentID];
                 if (!result)
                 {
+                    NSLog(@"Error adding item <%@> to playlist <%@>: %@", item.title, playlist.name, [db lastErrorMessage]);
                     return NO;
                 }
             }
         }
+        
+        NSLog(@"Done!");
         
         return YES;
     }];
