@@ -27,9 +27,9 @@ setup(
     version=__version__,
     description='A Python API for the iTunes application and music library',
     long_description=long_description,
-    url='https://bennnavetta.com',
     author='Ben Navetta',
     author_email='ben.navetta@gmail.com',
+    url='https://github.com/roguePanda/itunes-remote',
     license='MIT',
     classifiers=[
         'Development Status :: 4 - Beta',
