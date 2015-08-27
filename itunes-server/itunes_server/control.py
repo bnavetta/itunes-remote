@@ -60,10 +60,21 @@ class CurrentTrackAPI(MethodView):
 
     def put(self):
         json = get_json()
-        if not 'persistent_id' in json:
-            raise InvalidUsage('Must specify persistent ID of track to play')
-        persistent_id = PersistentID(json['persistent_id'])
-        app.play(persistent_id)
+        if 'persistent_id' in json:
+            persistent_id = PersistentID(json['persistent_id'])
+            app.play(persistent_id)
+        elif 'move' in json:
+            movement = json['move']
+            if movement == 'next':
+                app.next_track()
+            elif movement == 'back':
+                app.back_track()
+            elif movement == 'previous':
+                app.previous_track()
+            else:
+                raise InvalidUsage('Unknown movement: {}'.format(movement))
+        else:
+            raise InvalidUsage('Must specify movement or persistent ID of track to play')
         return self.get()
 
 control.add_url_rule('/current-track', view_func=CurrentTrackAPI.as_view('current_track'))
