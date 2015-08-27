@@ -2,7 +2,7 @@ from enum import Enum
 
 from flask import request
 from flask.json import JSONEncoder as FlaskJSONEncoder
-from pytunes import PersistentID
+from py_tunes import PersistentID
 
 from .errors import InvalidUsage
 

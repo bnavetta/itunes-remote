@@ -41,13 +41,13 @@ class Album(Base):
         return '<Album title="{0.title}" rating={0.rating} disc_number={0.disc_number} disc_count={0.disc_count} compilation={0.compilation} artist="{0._album_artist}">'.format(self)
 
 _playlist_items = Table('playlist_items', Base.metadata,
-    Column('playlist_id', Integer, ForeignKey('playlist.persistent_id')),
-    Column('item_id', Integer, ForeignKey('song.persistent_id')))
+    Column('playlist_id', String, ForeignKey('playlist.persistent_id')),
+    Column('item_id', String, ForeignKey('song.persistent_id')))
 
 class Song(Base):
     __tablename__ = 'song'
 
-    _persistent_id = Column('persistent_id', Integer, primary_key=True)
+    _persistent_id = Column('persistent_id', String, primary_key=True)
     title = Column(String)
     _artist = Column('artist', String, ForeignKey('artist.name'))
     _album = Column('album', String, ForeignKey('album.title'))
@@ -69,7 +69,7 @@ class Song(Base):
 class Playlist(Base):
     __tablename__ = 'playlist'
 
-    _persistent_id = Column('persistent_id', Integer, primary_key=True)
+    _persistent_id = Column('persistent_id', String, primary_key=True)
     name = Column(String)
     visible = Column(Boolean)
 
@@ -108,7 +108,7 @@ class ITunesLibrary(object):
 
     def find_song(self, persistent_id):
         if isinstance(persistent_id, PersistentID):
-            persistent_id = persistent_id.value
+            persistent_id = persistent_id.hex
         return self._session.query(Song).filter(Song._persistent_id == persistent_id).one()
 
     def songs(self):
@@ -122,7 +122,8 @@ class ITunesLibrary(object):
     def playlists(self):
         return self._session.query(Playlist)
 
-    def build_index(self, clear_db=False):
+    @staticmethod
+    def build_index(clear_db=False):
         if not path.isdir(path.dirname(index_path)):
             os.makedirs(path.dirname(index_path))
         args = [_indexer_binary]

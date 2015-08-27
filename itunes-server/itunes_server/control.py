@@ -2,12 +2,12 @@ from numbers import Rational
 
 from flask import Blueprint, jsonify, request, abort
 from flask.views import MethodView
-from pytunes import ITunesApp, PersistentID, PlayerState, ShuffleMode, RepeatMode
+from py_tunes import ITunesApp, PersistentID, PlayerState, ShuffleMode, RepeatMode
 
 from .errors import InvalidUsage
 from .json import get_json
 
-control = Blueprint('control', __name__)
+mod = Blueprint('control', __name__)
 app = ITunesApp()
 
 class PlayerStateAPI(MethodView):
@@ -36,7 +36,7 @@ class PlayerStateAPI(MethodView):
             raise InvalidUsage('Cannot transition to state "{}" through this API', state)
         return self.get()
 
-control.add_url_rule('/state', view_func=PlayerStateAPI.as_view('player_state'))
+mod.add_url_rule('/state', view_func=PlayerStateAPI.as_view('player_state'))
 
 class VolumeAPI(MethodView):
     def get(self):
@@ -54,9 +54,7 @@ class VolumeAPI(MethodView):
         app.volume = volume
         return self.get()
 
-control.add_url_rule('/volume', view_func=VolumeAPI.as_view('volume'))
-
-# TODO: expose full info (or at least more) from library for get operation
+mod.add_url_rule('/volume', view_func=VolumeAPI.as_view('volume'))
 
 class CurrentTrackAPI(MethodView):
     def get(self):
@@ -81,7 +79,7 @@ class CurrentTrackAPI(MethodView):
             raise InvalidUsage('Must specify movement or persistent ID of track to play')
         return self.get()
 
-control.add_url_rule('/current-track', view_func=CurrentTrackAPI.as_view('current_track'))
+mod.add_url_rule('/current-track', view_func=CurrentTrackAPI.as_view('current_track'))
 
 class CurrentPlaylistAPI(MethodView):
     def get(self):
@@ -95,7 +93,7 @@ class CurrentPlaylistAPI(MethodView):
         app.play(persistent_id)
         return self.get()
 
-control.add_url_rule('/current-playlist', view_func=CurrentPlaylistAPI.as_view('current_playlist'))
+mod.add_url_rule('/current-playlist', view_func=CurrentPlaylistAPI.as_view('current_playlist'))
 
 class ShuffleAPI(MethodView):
     def put(self):
@@ -110,7 +108,7 @@ class ShuffleAPI(MethodView):
             app.set_shuffle_mode(mode)
         return ('', 204)
 
-control.add_url_rule('/shuffle', view_func=ShuffleAPI.as_view('shuffle'))
+mod.add_url_rule('/shuffle', view_func=ShuffleAPI.as_view('shuffle'))
 
 class RepeatAPI(MethodView):
     def put(self):
@@ -121,7 +119,7 @@ class RepeatAPI(MethodView):
         app.set_repeat_mode(mode)
         return ('', 204)
 
-control.add_url_rule('/repeat', view_func=RepeatAPI.as_view('repeat'))
+mod.add_url_rule('/repeat', view_func=RepeatAPI.as_view('repeat'))
 
 class PositionAPI(MethodView):
     def get(self):
@@ -137,4 +135,4 @@ class PositionAPI(MethodView):
         app.player_position = position
         return self.get()
 
-control.add_url_rule('/position', view_func=PositionAPI.as_view('position'))
+mod.add_url_rule('/position', view_func=PositionAPI.as_view('position'))

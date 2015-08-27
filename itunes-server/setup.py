@@ -6,7 +6,9 @@ setup(
     packages = find_packages(),
     install_requires = [
         'Flask ~= 0.10',
-        'pytunes ~= 0.1'
+        'Flask-RESTful ~= 0.3',
+        'marshmallow ~= 2.0b5',
+        'py-tunes ~= 1.0b2'
     ],
     entry_points={
         'console_scripts': [

@@ -32,18 +32,19 @@
 - (void)createSchema
 {
     [self executeUpdateInTransaction:^BOOL(FMDatabase *db) {
+        // Use TEXT for persistent_id due to some weirdness with unsigned values
         NSString* schema = @"CREATE TABLE IF NOT EXISTS artist (name TEXT PRIMARY KEY);"
                             "CREATE INDEX IF NOT EXISTS artist_name on artist (name);"
                             "CREATE TABLE IF NOT EXISTS  album (title TEXT PRIMARY KEY, rating INTEGER, disc_number UNSIGNED INTEGER, disc_count UNSIGNED_INTEGER, compilation BOOLEAN, album_artist TEXT, FOREIGN KEY(album_artist) REFERENCES artist(name));"
                             "CREATE INDEX IF NOT EXISTS album_title ON album(title);"
                             "CREATE INDEX IF NOT EXISTS album_artist ON album(album_artist);"
-                            "CREATE TABLE IF NOT EXISTS song (persistent_id UNSIGNED INTEGER PRIMARY KEY, title TEXT, artist TEXT, composer TEXT, rating INTEGER, album TEXT, genre TEXT, file_size UNSIGNED INTEGER, total_time UNSIGNED INTEGER, track_number UNSIGNED INTEGER, play_count UNSIGNED INTEGER, last_played_date DATE, location TEXT, release_date DATE, year UNSIGNED INTEGER, FOREIGN KEY(artist) REFERENCES artist(name), FOREIGN KEY(album) REFERENCES album(title));"
+                            "CREATE TABLE IF NOT EXISTS song (persistent_id TEXT PRIMARY KEY, title TEXT, artist TEXT, composer TEXT, rating INTEGER, album TEXT, genre TEXT, file_size UNSIGNED INTEGER, total_time UNSIGNED INTEGER, track_number UNSIGNED INTEGER, play_count UNSIGNED INTEGER, last_played_date DATE, location TEXT, release_date DATE, year UNSIGNED INTEGER, FOREIGN KEY(artist) REFERENCES artist(name), FOREIGN KEY(album) REFERENCES album(title));"
                             "CREATE INDEX IF NOT EXISTS song_title ON song(title);"
                             "CREATE INDEX IF NOT EXISTS song_artist ON song(artist);"
                             "CREATE INDEX IF NOT EXISTS song_album ON song(album);"
-                            "CREATE TABLE IF NOT EXISTS playlist (persistent_id UNSIGNED INTEGER PRIMARY KEY, name TEXT, visible BOOLEAN);"
+                            "CREATE TABLE IF NOT EXISTS playlist (persistent_id TEXT PRIMARY KEY, name TEXT, visible BOOLEAN);"
                             "CREATE INDEX IF NOT EXISTS playlist_name ON playlist(name);"
-                            "CREATE TABLE IF NOT EXISTS playlist_items (playlist_id UNSIGNED INTEGER, item_id UNSIGNED INTEGER, FOREIGN KEY(playlist_id) REFERENCES playlist(persistent_id), FOREIGN KEY(item_id) REFERENCES song(persistent_id));";
+                            "CREATE TABLE IF NOT EXISTS playlist_items (playlist_id TEXT, item_id TEXT, FOREIGN KEY(playlist_id) REFERENCES playlist(persistent_id), FOREIGN KEY(item_id) REFERENCES song(persistent_id));";
         
         return [db executeStatements:schema];
     }];
@@ -79,6 +80,11 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
         default:
             return NO;
     }
+}
+
+NSString* persistentIDString(NSNumber* persistentID)
+{
+    return [NSString stringWithFormat:@"%lX", persistentID.unsignedLongValue];
 }
 
 - (void)indexLibrary:(ITLibrary *)library
@@ -148,10 +154,11 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
             }
             
             NSString* title = item.title ?: @"Unknown";
+            NSString* persistentID = persistentIDString(item.persistentID);
             id lastPlayedDate = item.lastPlayedDate ?: [NSNull null];
             id releaseDate = item.releaseDate ?: [NSNull null];
             
-            BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO song (persistent_id, title, artist, composer, rating, album, genre, file_size, total_time, track_number, play_count, last_played_date, location, release_date, year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", item.persistentID, title, artistName, item.composer, @(item.rating), albumTitle, item.genre, @(item.fileSize), @(item.totalTime), @(item.trackNumber), @(item.playCount), lastPlayedDate, item.location.absoluteString, releaseDate, @(item.year)];
+            BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO song (persistent_id, title, artist, composer, rating, album, genre, file_size, total_time, track_number, play_count, last_played_date, location, release_date, year) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", persistentID, title, artistName, item.composer, @(item.rating), albumTitle, item.genre, @(item.fileSize), @(item.totalTime), @(item.trackNumber), @(item.playCount), lastPlayedDate, item.location.absoluteString, releaseDate, @(item.year)];
             if (!result)
             {
                 NSLog(@"Error indexing song <%@>: %@", title, [db lastErrorMessage]);
@@ -165,7 +172,8 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
         {
             if (!isMusicPlaylist(playlist)) continue;
             
-            BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO playlist (persistent_id, name, visible) VALUES (?, ?, ?)", playlist.persistentID, playlist.name, @(playlist.visible)];
+            NSString* persistentID = persistentIDString(playlist.persistentID);
+            BOOL result = [db executeUpdate:@"INSERT OR REPLACE INTO playlist (persistent_id, name, visible) VALUES (?, ?, ?)", persistentID, playlist.name, @(playlist.visible)];
             if (!result)
             {
                 NSLog(@"Error indexing playlist <%@>: %@", playlist.name, [db lastErrorMessage]);
@@ -176,7 +184,7 @@ BOOL isMusicPlaylist(ITLibPlaylist* playlist)
             {
                 if (item.mediaKind != ITLibMediaItemMediaKindSong) continue;
                 
-                BOOL result = [db executeUpdate:@"INSERT INTO playlist_items (playlist_id, item_id) VALUES (?, ?)", playlist.persistentID, item.persistentID];
+                BOOL result = [db executeUpdate:@"INSERT INTO playlist_items (playlist_id, item_id) VALUES (?, ?)", persistentID, persistentIDString(item.persistentID)];
                 if (!result)
                 {
                     NSLog(@"Error adding item <%@> to playlist <%@>: %@", item.title, playlist.name, [db lastErrorMessage]);
