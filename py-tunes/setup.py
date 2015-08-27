@@ -23,7 +23,7 @@ if sys.version_info <= (3,):
     requirements.append('enum34')
 
 setup(
-    name='py_tunes',
+    name='py-tunes',
     version=__version__,
     description='A Python API for the iTunes application and music library',
     long_description=long_description,
