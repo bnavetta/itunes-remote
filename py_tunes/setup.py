@@ -8,7 +8,7 @@ here = path.abspath(path.dirname(__file__))
 with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
-with open(path.join(here, 'src', 'pytunes', 'version.py')) as f:
+with open(path.join(here, 'src', 'py_tunes', 'version.py')) as f:
     code = compile(f.read(), 'version.py', 'exec')
     exec(code)
 
@@ -23,7 +23,7 @@ if sys.version_info <= (3,):
     requirements.append('enum34')
 
 setup(
-    name='pytunes',
+    name='py_tunes',
     version=__version__,
     description='A Python API for the iTunes application and music library',
     long_description=long_description,
@@ -45,8 +45,8 @@ setup(
     keywords='itunes osx',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    package_data={'pytunes': ['itunes-indexer']},
-    eager_resources=['pytunes/itunes-indexer'],
+    package_data={'py_tunes': ['itunes-indexer']},
+    eager_resources=['py_tunes/itunes-indexer'],
     zip_safe=True,
     install_requires=requirements,
     tests_require=['pytest ~= 2.7']

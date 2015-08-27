@@ -2,8 +2,8 @@ import sys
 import time
 import pytest
 
-from pytunes import PersistentID
-from pytunes.app import ITunesApp, ShuffleMode, RepeatMode, PlayerState
+from py_tunes import PersistentID
+from py_tunes.app import ITunesApp, ShuffleMode, RepeatMode, PlayerState
 
 song_id = PersistentID('32EA0ABFE8147F9')
 song_title = 'Sunday Bloody Sunday'

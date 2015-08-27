@@ -8,9 +8,9 @@ from sqlalchemy import create_engine, Table, Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship, backref
 
-from pytunes.api import PersistentID
+from py_tunes.api import PersistentID
 
-index_path = path.join(appdirs.user_cache_dir(appname='pytunes'), 'itunes.sqlite3')
+index_path = path.join(appdirs.user_cache_dir(appname='py_tunes'), 'itunes.sqlite3')
 
 _indexer_binary = pkg_resources.resource_filename(__name__, 'itunes-indexer')
 

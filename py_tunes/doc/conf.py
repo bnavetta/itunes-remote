@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# pytunes documentation build configuration file, created by
+# py_tunes documentation build configuration file, created by
 # sphinx-quickstart on Sat Aug 22 14:51:41 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -51,7 +51,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'pytunes'
+project = 'py_tunes'
 copyright = '2015, Ben Navetta'
 author = 'Ben Navetta'
 
@@ -59,7 +59,7 @@ author = 'Ben Navetta'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 
-from pytunes.version import __version__
+from py_tunes.version import __version__
 
 # The short X.Y version.
 version = __version__
@@ -207,7 +207,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pytunesdoc'
+htmlhelp_basename = 'py_tunesdoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -229,7 +229,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'pytunes.tex', 'pytunes Documentation',
+  (master_doc, 'py_tunes.tex', 'py_tunes Documentation',
    'Ben Navetta', 'manual'),
 ]
 
@@ -259,7 +259,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'pytunes', 'pytunes Documentation',
+    (master_doc, 'py_tunes', 'py_tunes Documentation',
      [author], 1)
 ]
 
@@ -273,8 +273,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'pytunes', 'pytunes Documentation',
-   author, 'pytunes', 'One line description of project.',
+  (master_doc, 'py_tunes', 'py_tunes Documentation',
+   author, 'py_tunes', 'One line description of project.',
    'Miscellaneous'),
 ]
 
