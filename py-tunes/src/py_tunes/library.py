@@ -114,7 +114,7 @@ class ITunesLibrary(object):
 
     def find_playlist(self, persistent_id):
         if isinstance(persistent_id, PersistentID):
-            persistent_id = persistent_id.value
+            persistent_id = persistent_id.hex
         return self._session.query(Playlist).filter(Playlist._persistent_id == persistent_id).one()
 
     def playlists(self):
