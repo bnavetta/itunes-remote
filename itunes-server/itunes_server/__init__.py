@@ -1,4 +1,8 @@
+import atexit
+
 from flask import Flask
+
+from .advertise import NetworkAdvertiser
 
 DEBUG=True
 
@@ -14,4 +18,7 @@ app.register_blueprint(control.mod, url_prefix='/control')
 app.register_blueprint(library.mod, url_prefix='/library')
 
 def run():
+    advertiser = NetworkAdvertiser(type='_itunes-server._tcp', port=5000)
+    atexit.register(lambda: advertiser.close())
+
     app.run(host='0.0.0.0')
