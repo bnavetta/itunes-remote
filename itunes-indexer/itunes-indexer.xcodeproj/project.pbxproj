@@ -31,6 +31,7 @@
 		0F49E62550427001554D62FB /* Pods-itunes-indexer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunes-indexer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-itunes-indexer/Pods-itunes-indexer.debug.xcconfig"; sourceTree = "<group>"; };
 		65F90C1865B6ACE9E4605AFF /* Pods-itunes-indexer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-itunes-indexer.release.xcconfig"; path = "Pods/Target Support Files/Pods-itunes-indexer/Pods-itunes-indexer.release.xcconfig"; sourceTree = "<group>"; };
 		8401FD9338B0C74E4B88B251 /* libPods-itunes-indexer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-itunes-indexer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B58587011B8FB2EB0029DDDB /* itunes-indexer.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "itunes-indexer.entitlements"; sourceTree = SOURCE_ROOT; };
 		B5D5F6781B8C99E000EFA036 /* itunes-indexer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "itunes-indexer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5D5F67B1B8C99E000EFA036 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5D5F6821B8C9A6700EFA036 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
@@ -41,7 +42,6 @@
 		B5D5F68A1B8CA9AF00EFA036 /* MusicDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MusicDataManager.m; sourceTree = "<group>"; };
 		B5D5F68C1B8CB54400EFA036 /* iTunesLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iTunesLibrary.framework; path = ../../../../../Library/Frameworks/iTunesLibrary.framework; sourceTree = "<group>"; };
 		B5E8B8AB1B8EAC9E004B05B1 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B5E8B8AC1B8EADF0004B05B1 /* entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = entitlements.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +64,7 @@
 				B5D5F6791B8C99E000EFA036 /* Products */,
 				C6040C1B0A513822E0B1F8FA /* Pods */,
 				BDB1B40E2555CE6616E1B09E /* Frameworks */,
+				B58587011B8FB2EB0029DDDB /* itunes-indexer.entitlements */,
 			);
 			sourceTree = "<group>";
 		};
@@ -85,7 +86,6 @@
 				B5D5F68A1B8CA9AF00EFA036 /* MusicDataManager.m */,
 				B5D5F6881B8CA99400EFA036 /* DataManager */,
 				B5E8B8AB1B8EAC9E004B05B1 /* Info.plist */,
-				B5E8B8AC1B8EADF0004B05B1 /* entitlements.plist */,
 			);
 			path = "itunes-indexer";
 			sourceTree = "<group>";
@@ -299,7 +299,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0F49E62550427001554D62FB /* Pods-itunes-indexer.debug.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/itunes-indexer/entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/itunes-indexer.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -323,7 +323,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 65F90C1865B6ACE9E4605AFF /* Pods-itunes-indexer.release.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/itunes-indexer/entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/itunes-indexer.entitlements";
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

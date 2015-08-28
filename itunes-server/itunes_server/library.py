@@ -38,9 +38,16 @@ class SongSchema(Schema):
     release_date = fields.Date()
     year = fields.Integer()
 
+class PlaylistSchema(Schema):
+    persistent_id = PersistentIDField()
+    name = fields.Str()
+    items = fields.Nested('SongSchema', many=True) # exclude=('artist', 'album')
+    visible = fields.Boolean() # is this actually useful?
+
 artist_schema = ArtistSchema()
 album_schema = AlbumSchema()
 song_schema = SongSchema()
+playlist_schema = PlaylistSchema()
 
 class ArtistListResource(Resource):
     @marshal_with(artist_schema, many=True)
@@ -80,3 +87,16 @@ class SongResource(Resource):
 
 api.add_resource(SongListResource, '/song')
 api.add_resource(SongResource, '/song/<string:persistent_id>', endpoint='song_ep')
+
+class PlaylistListResource(Resource): # say that 10 times fast
+    @marshal_with(playlist_schema, many=True)
+    def get(self):
+        return get_library().playlists().all()
+
+class PlaylistResource(Resource):
+    @marshal_with(playlist_schema)
+    def get(self, persistent_id):
+        return get_library().find_playlist(PersistentID(persistent_id)) # TODO: URL variable converter for PersistentID
+
+api.add_resource(PlaylistListResource, '/playlist')
+api.add_resource(PlaylistResource, '/playlist/<string:persistent_id>', endpoint='playlist_ep')

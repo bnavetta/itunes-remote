@@ -183,8 +183,9 @@ NSString* persistentIDString(NSNumber* persistentID)
             for (ITLibMediaItem* item in playlist.items)
             {
                 if (item.mediaKind != ITLibMediaItemMediaKindSong) continue;
+                NSString* itemID = persistentIDString(item.persistentID);
                 
-                BOOL result = [db executeUpdate:@"INSERT INTO playlist_items (playlist_id, item_id) VALUES (?, ?)", persistentID, persistentIDString(item.persistentID)];
+                BOOL result = [db executeUpdate:@"INSERT INTO playlist_items (playlist_id, item_id) VALUES (?, ?)", persistentID, itemID];
                 if (!result)
                 {
                     NSLog(@"Error adding item <%@> to playlist <%@>: %@", item.title, playlist.name, [db lastErrorMessage]);

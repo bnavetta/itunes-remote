@@ -13,6 +13,7 @@ from py_tunes.api import PersistentID
 index_path = path.join(appdirs.user_cache_dir(appname='py_tunes'), 'itunes.sqlite3')
 
 _indexer_binary = pkg_resources.resource_filename(__name__, 'itunes-indexer')
+print("Indexer: {}".format(_indexer_binary))
 
 _engine = create_engine('sqlite:///' + index_path)
 Session = sessionmaker(bind=_engine)
@@ -83,7 +84,7 @@ class Playlist(Base):
 Artist.albums = relationship('Album', backref='artist')
 Artist.songs = relationship('Song', backref='artist')
 Album.tracks = relationship('Song', backref='album')
-Playlist.items = relationship("Song", secondary=_playlist_items)
+Playlist.items = relationship('Song', secondary=_playlist_items)
 
 class ITunesLibrary(object):
     __slots__ = ['_session']
