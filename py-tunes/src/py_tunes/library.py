@@ -12,9 +12,6 @@ from py_tunes.api import PersistentID
 
 index_path = path.join(appdirs.user_cache_dir(appname='py_tunes'), 'itunes.sqlite3')
 
-_indexer_binary = pkg_resources.resource_filename(__name__, 'itunes-indexer')
-print("Indexer: {}".format(_indexer_binary))
-
 _engine = create_engine('sqlite:///' + index_path)
 Session = sessionmaker(bind=_engine)
 
@@ -122,13 +119,3 @@ class ITunesLibrary(object):
 
     def playlists(self):
         return self._session.query(Playlist)
-
-    @staticmethod
-    def build_index(clear_db=False):
-        if not path.isdir(path.dirname(index_path)):
-            os.makedirs(path.dirname(index_path))
-        args = [_indexer_binary]
-        if clear_db:
-            args.append('-c')
-        args.extend(['-d', index_path])
-        subprocess.check_call(args)

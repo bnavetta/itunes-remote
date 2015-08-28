@@ -15,7 +15,3 @@ def close_library(exception):
     library = getattr(g, '_library', None)
     if library is not None:
         library.close()
-
-@app.before_first_request
-def build_index():
-    ITunesLibrary.build_index()
