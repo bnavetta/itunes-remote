@@ -13,8 +13,8 @@ api = Api(mod)
 
 class ArtistSchema(Schema):
     name = fields.Str()
-    albums = fields.Nested('AlbumSchema', many=True, exclude=('artist', 'tracks'))
-    songs = fields.Nested('SongSchema', many=True, exclude=('artist', 'album'))
+    albums = fields.Nested('AlbumSchema', many=True, only=('title',))
+    songs = fields.Nested('SongSchema', many=True, only=('title', 'persistent_id'))
 
 class AlbumSchema(Schema):
     title = fields.Str()
@@ -22,14 +22,14 @@ class AlbumSchema(Schema):
     disc_number = fields.Integer()
     disc_count = fields.Integer()
     compilation = fields.Boolean()
-    artist = fields.Nested('ArtistSchema', exclude=('albums', 'songs'))
-    tracks = fields.Nested('SongSchema', exclude=('album', 'artist'), many=True)
+    artist = fields.Nested('ArtistSchema', only=('name',))
+    tracks = fields.Nested('SongSchema', only=('persistent_id', 'title'), many=True)
 
 class SongSchema(Schema):
     persistent_id = PersistentIDField()
     title = fields.Str()
-    artist = fields.Nested('ArtistSchema', exclude=('songs', 'albums'))
-    album = fields.Nested('AlbumSchema', exclude=('tracks', 'artist'))
+    artist = fields.Nested('ArtistSchema', only=('name',))
+    album = fields.Nested('AlbumSchema', only=('title',))
     total_time = fields.Integer()
     track_number = fields.Integer()
     play_count = fields.Integer()
