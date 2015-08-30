@@ -1,0 +1,1126 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B508A90E1B90987500E3D610 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A90D1B90987500E3D610 /* AppDelegate.swift */; };
+		B508A9151B90987500E3D610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B508A9141B90987500E3D610 /* Assets.xcassets */; };
+		B508A9181B90987500E3D610 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B508A9161B90987500E3D610 /* LaunchScreen.storyboard */; };
+		B508A9231B90987500E3D610 /* iTunesRemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A9221B90987500E3D610 /* iTunesRemoteTests.swift */; };
+		B508A92E1B90987500E3D610 /* iTunesRemoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A92D1B90987500E3D610 /* iTunesRemoteUITests.swift */; };
+		B508A9331B90987500E3D610 /* iTunesRemote WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B508A9321B90987500E3D610 /* iTunesRemote WatchKit App.app */; };
+		B508A9391B90987500E3D610 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B508A9371B90987500E3D610 /* Interface.storyboard */; };
+		B508A93B1B90987500E3D610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B508A93A1B90987500E3D610 /* Assets.xcassets */; };
+		B508A9421B90987500E3D610 /* iTunesRemote WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B508A9411B90987500E3D610 /* iTunesRemote WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B508A9471B90987500E3D610 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A9461B90987500E3D610 /* InterfaceController.swift */; };
+		B508A9491B90987500E3D610 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A9481B90987500E3D610 /* ExtensionDelegate.swift */; };
+		B508A94B1B90987500E3D610 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A94A1B90987500E3D610 /* GlanceController.swift */; };
+		B508A94D1B90987500E3D610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B508A94C1B90987500E3D610 /* Assets.xcassets */; };
+		B591D1D41B916A5C00D73D78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D31B916A5C00D73D78 /* Alamofire.framework */; };
+		B591D1D51B916A5C00D73D78 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D31B916A5C00D73D78 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B591D1D81B916A6300D73D78 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D71B916A6300D73D78 /* Argo.framework */; };
+		B591D1D91B916A6300D73D78 /* Argo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D71B916A6300D73D78 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B591D1DB1B916A6A00D73D78 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1DA1B916A6A00D73D78 /* SnapKit.framework */; };
+		B591D1DC1B916A6A00D73D78 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1DA1B916A6A00D73D78 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B591D1ED1B91CE7E00D73D78 /* Alamofire.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B591D1EA1B91CE7E00D73D78 /* Alamofire.framework.dSYM */; };
+		B591D1EE1B91CE7E00D73D78 /* Argo.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B591D1EB1B91CE7E00D73D78 /* Argo.framework.dSYM */; };
+		B591D1EF1B91CE7E00D73D78 /* SnapKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B591D1EC1B91CE7E00D73D78 /* SnapKit.framework.dSYM */; };
+		B5AC3D081B91D9C900980C37 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC3D061B91D9C900980C37 /* Nimble.framework */; };
+		B5AC3D091B91D9C900980C37 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AC3D071B91D9C900980C37 /* Quick.framework */; };
+		B5AC3D0C1B91DC8A00980C37 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC3D0B1B91DC8A00980C37 /* Model.swift */; settings = {ASSET_TAGS = (); }; };
+		B5BE75F01B90A97F00F02D93 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE75EF1B90A97F00F02D93 /* InterfaceController.swift */; };
+		B5BE75F21B90A97F00F02D93 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BE75F11B90A97F00F02D93 /* NotificationController.swift */; };
+		B5BE75F41B90A97F00F02D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE75F31B90A97F00F02D93 /* Assets.xcassets */; };
+		B5BE75F91B90A98000F02D93 /* iTunesRemote WatchKit 1 App.app in Resources */ = {isa = PBXBuildFile; fileRef = B5BE75F81B90A97F00F02D93 /* iTunesRemote WatchKit 1 App.app */; };
+		B5BE75FF1B90A98000F02D93 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BE75FD1B90A98000F02D93 /* Interface.storyboard */; };
+		B5BE76011B90A98000F02D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE76001B90A98000F02D93 /* Assets.xcassets */; };
+		B5BE76051B90A98000F02D93 /* iTunesRemote WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5BE75EB1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5E666C81B929BD10075698C /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E666C71B929BD10075698C /* Curry.framework */; };
+		B5E666C91B929BD10075698C /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5E666C71B929BD10075698C /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5E666CB1B929BE50075698C /* Curry.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E666CA1B929BE50075698C /* Curry.framework.dSYM */; };
+		B5E666CD1B92A33A0075698C /* TypeDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666CC1B92A33A0075698C /* TypeDecoders.swift */; settings = {ASSET_TAGS = (); }; };
+		B5E666CF1B93253D0075698C /* iTunesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666CE1B93253D0075698C /* iTunesClient.swift */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B508A91F1B90987500E3D610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B508A9021B90987500E3D610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B508A9091B90987500E3D610;
+			remoteInfo = iTunesRemote;
+		};
+		B508A92A1B90987500E3D610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B508A9021B90987500E3D610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B508A9091B90987500E3D610;
+			remoteInfo = iTunesRemote;
+		};
+		B508A9341B90987500E3D610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B508A9021B90987500E3D610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B508A9311B90987500E3D610;
+			remoteInfo = "iTunesRemote WatchKit App";
+		};
+		B508A9431B90987500E3D610 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B508A9021B90987500E3D610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B508A9401B90987500E3D610;
+			remoteInfo = "iTunesRemote WatchKit Extension";
+		};
+		B5BE75FA1B90A98000F02D93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B508A9021B90987500E3D610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE75F71B90A97F00F02D93;
+			remoteInfo = "iTunesRemote WatchKit 1 App";
+		};
+		B5BE76031B90A98000F02D93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B508A9021B90987500E3D610 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B5BE75EA1B90A97F00F02D93;
+			remoteInfo = "iTunesRemote WatchKit 1 Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B508A9541B90987500E3D610 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B508A9421B90987500E3D610 /* iTunesRemote WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A9581B90987500E3D610 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				B508A9331B90987500E3D610 /* iTunesRemote WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B591D1D61B916A5C00D73D78 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B5E666C91B929BD10075698C /* Curry.framework in Embed Frameworks */,
+				B591D1DC1B916A6A00D73D78 /* SnapKit.framework in Embed Frameworks */,
+				B591D1D51B916A5C00D73D78 /* Alamofire.framework in Embed Frameworks */,
+				B591D1D91B916A6300D73D78 /* Argo.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B591D1E91B91CE7400D73D78 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				B591D1ED1B91CE7E00D73D78 /* Alamofire.framework.dSYM in CopyFiles */,
+				B591D1EE1B91CE7E00D73D78 /* Argo.framework.dSYM in CopyFiles */,
+				B5E666CB1B929BE50075698C /* Curry.framework.dSYM in CopyFiles */,
+				B591D1EF1B91CE7E00D73D78 /* SnapKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE760C1B90A98000F02D93 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B5BE76051B90A98000F02D93 /* iTunesRemote WatchKit 1 Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B508A90A1B90987500E3D610 /* iTunesRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B508A90D1B90987500E3D610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B508A9141B90987500E3D610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B508A9171B90987500E3D610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B508A9191B90987500E3D610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B508A91E1B90987500E3D610 /* iTunesRemoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesRemoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B508A9221B90987500E3D610 /* iTunesRemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRemoteTests.swift; sourceTree = "<group>"; };
+		B508A9241B90987500E3D610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B508A9291B90987500E3D610 /* iTunesRemoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesRemoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B508A92D1B90987500E3D610 /* iTunesRemoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesRemoteUITests.swift; sourceTree = "<group>"; };
+		B508A92F1B90987500E3D610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B508A9321B90987500E3D610 /* iTunesRemote WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunesRemote WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B508A9381B90987500E3D610 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B508A93A1B90987500E3D610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B508A93C1B90987500E3D610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B508A9411B90987500E3D610 /* iTunesRemote WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iTunesRemote WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B508A9461B90987500E3D610 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B508A9481B90987500E3D610 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		B508A94A1B90987500E3D610 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		B508A94C1B90987500E3D610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B508A94E1B90987500E3D610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B591D1D31B916A5C00D73D78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		B591D1D71B916A6300D73D78 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
+		B591D1DA1B916A6A00D73D78 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+		B591D1EA1B91CE7E00D73D78 /* Alamofire.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Alamofire.framework.dSYM; path = Carthage/Build/iOS/Alamofire.framework.dSYM; sourceTree = "<group>"; };
+		B591D1EB1B91CE7E00D73D78 /* Argo.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Argo.framework.dSYM; path = Carthage/Build/iOS/Argo.framework.dSYM; sourceTree = "<group>"; };
+		B591D1EC1B91CE7E00D73D78 /* SnapKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SnapKit.framework.dSYM; path = Carthage/Build/iOS/SnapKit.framework.dSYM; sourceTree = "<group>"; };
+		B5AC3D061B91D9C900980C37 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		B5AC3D071B91D9C900980C37 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		B5AC3D0B1B91DC8A00980C37 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		B5BE75EB1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iTunesRemote WatchKit 1 Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE75EE1B90A97F00F02D93 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		B5BE75EF1B90A97F00F02D93 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		B5BE75F11B90A97F00F02D93 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		B5BE75F31B90A97F00F02D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5BE75F51B90A97F00F02D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5BE75F81B90A97F00F02D93 /* iTunesRemote WatchKit 1 App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTunesRemote WatchKit 1 App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE75FE1B90A98000F02D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		B5BE76001B90A98000F02D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5BE76021B90A98000F02D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5E666C71B929BD10075698C /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
+		B5E666CA1B929BE50075698C /* Curry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Curry.framework.dSYM; path = Carthage/Build/iOS/Curry.framework.dSYM; sourceTree = "<group>"; };
+		B5E666CC1B92A33A0075698C /* TypeDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDecoders.swift; sourceTree = "<group>"; };
+		B5E666CE1B93253D0075698C /* iTunesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B508A9071B90987500E3D610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E666C81B929BD10075698C /* Curry.framework in Frameworks */,
+				B591D1DB1B916A6A00D73D78 /* SnapKit.framework in Frameworks */,
+				B591D1D41B916A5C00D73D78 /* Alamofire.framework in Frameworks */,
+				B591D1D81B916A6300D73D78 /* Argo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A91B1B90987500E3D610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5AC3D081B91D9C900980C37 /* Nimble.framework in Frameworks */,
+				B5AC3D091B91D9C900980C37 /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A9261B90987500E3D610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A93E1B90987500E3D610 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE75E81B90A97F00F02D93 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B508A9011B90987500E3D610 = {
+			isa = PBXGroup;
+			children = (
+				B591D1EA1B91CE7E00D73D78 /* Alamofire.framework.dSYM */,
+				B591D1EB1B91CE7E00D73D78 /* Argo.framework.dSYM */,
+				B5E666CA1B929BE50075698C /* Curry.framework.dSYM */,
+				B591D1EC1B91CE7E00D73D78 /* SnapKit.framework.dSYM */,
+				B591D1D31B916A5C00D73D78 /* Alamofire.framework */,
+				B591D1D71B916A6300D73D78 /* Argo.framework */,
+				B5E666C71B929BD10075698C /* Curry.framework */,
+				B5AC3D061B91D9C900980C37 /* Nimble.framework */,
+				B5AC3D071B91D9C900980C37 /* Quick.framework */,
+				B591D1DA1B916A6A00D73D78 /* SnapKit.framework */,
+				B508A90C1B90987500E3D610 /* iTunesRemote */,
+				B508A9211B90987500E3D610 /* iTunesRemoteTests */,
+				B508A92C1B90987500E3D610 /* iTunesRemoteUITests */,
+				B508A9361B90987500E3D610 /* iTunesRemote WatchKit App */,
+				B508A9451B90987500E3D610 /* iTunesRemote WatchKit Extension */,
+				B5BE75EC1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension */,
+				B5BE75FC1B90A98000F02D93 /* iTunesRemote WatchKit 1 App */,
+				B508A90B1B90987500E3D610 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B508A90B1B90987500E3D610 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B508A90A1B90987500E3D610 /* iTunesRemote.app */,
+				B508A91E1B90987500E3D610 /* iTunesRemoteTests.xctest */,
+				B508A9291B90987500E3D610 /* iTunesRemoteUITests.xctest */,
+				B508A9321B90987500E3D610 /* iTunesRemote WatchKit App.app */,
+				B508A9411B90987500E3D610 /* iTunesRemote WatchKit Extension.appex */,
+				B5BE75EB1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension.appex */,
+				B5BE75F81B90A97F00F02D93 /* iTunesRemote WatchKit 1 App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B508A90C1B90987500E3D610 /* iTunesRemote */ = {
+			isa = PBXGroup;
+			children = (
+				B508A90D1B90987500E3D610 /* AppDelegate.swift */,
+				B508A9141B90987500E3D610 /* Assets.xcassets */,
+				B508A9161B90987500E3D610 /* LaunchScreen.storyboard */,
+				B508A9191B90987500E3D610 /* Info.plist */,
+				B5AC3D0A1B91DC5700980C37 /* iTunesClient */,
+			);
+			path = iTunesRemote;
+			sourceTree = "<group>";
+		};
+		B508A9211B90987500E3D610 /* iTunesRemoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				B508A9221B90987500E3D610 /* iTunesRemoteTests.swift */,
+				B508A9241B90987500E3D610 /* Info.plist */,
+			);
+			path = iTunesRemoteTests;
+			sourceTree = "<group>";
+		};
+		B508A92C1B90987500E3D610 /* iTunesRemoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B508A92D1B90987500E3D610 /* iTunesRemoteUITests.swift */,
+				B508A92F1B90987500E3D610 /* Info.plist */,
+			);
+			path = iTunesRemoteUITests;
+			sourceTree = "<group>";
+		};
+		B508A9361B90987500E3D610 /* iTunesRemote WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				B508A9371B90987500E3D610 /* Interface.storyboard */,
+				B508A93A1B90987500E3D610 /* Assets.xcassets */,
+				B508A93C1B90987500E3D610 /* Info.plist */,
+			);
+			path = "iTunesRemote WatchKit App";
+			sourceTree = "<group>";
+		};
+		B508A9451B90987500E3D610 /* iTunesRemote WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B508A9461B90987500E3D610 /* InterfaceController.swift */,
+				B508A9481B90987500E3D610 /* ExtensionDelegate.swift */,
+				B508A94A1B90987500E3D610 /* GlanceController.swift */,
+				B508A94C1B90987500E3D610 /* Assets.xcassets */,
+				B508A94E1B90987500E3D610 /* Info.plist */,
+			);
+			path = "iTunesRemote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B5AC3D0A1B91DC5700980C37 /* iTunesClient */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC3D0B1B91DC8A00980C37 /* Model.swift */,
+				B5E666CC1B92A33A0075698C /* TypeDecoders.swift */,
+				B5E666CE1B93253D0075698C /* iTunesClient.swift */,
+			);
+			name = iTunesClient;
+			sourceTree = "<group>";
+		};
+		B5BE75EC1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE75EF1B90A97F00F02D93 /* InterfaceController.swift */,
+				B5BE75F11B90A97F00F02D93 /* NotificationController.swift */,
+				B5BE75F31B90A97F00F02D93 /* Assets.xcassets */,
+				B5BE75F51B90A97F00F02D93 /* Info.plist */,
+				B5BE75ED1B90A97F00F02D93 /* Supporting Files */,
+			);
+			path = "iTunesRemote WatchKit 1 Extension";
+			sourceTree = "<group>";
+		};
+		B5BE75ED1B90A97F00F02D93 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE75EE1B90A97F00F02D93 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B5BE75FC1B90A98000F02D93 /* iTunesRemote WatchKit 1 App */ = {
+			isa = PBXGroup;
+			children = (
+				B5BE75FD1B90A98000F02D93 /* Interface.storyboard */,
+				B5BE76001B90A98000F02D93 /* Assets.xcassets */,
+				B5BE76021B90A98000F02D93 /* Info.plist */,
+			);
+			path = "iTunesRemote WatchKit 1 App";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B508A9091B90987500E3D610 /* iTunesRemote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B508A9591B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote" */;
+			buildPhases = (
+				B508A9061B90987500E3D610 /* Sources */,
+				B508A9071B90987500E3D610 /* Frameworks */,
+				B508A9081B90987500E3D610 /* Resources */,
+				B508A9581B90987500E3D610 /* Embed Watch Content */,
+				B5BE760C1B90A98000F02D93 /* Embed App Extensions */,
+				B591D1D61B916A5C00D73D78 /* Embed Frameworks */,
+				B591D1DD1B916A8F00D73D78 /* ShellScript */,
+				B591D1E91B91CE7400D73D78 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B508A9351B90987500E3D610 /* PBXTargetDependency */,
+				B5BE76041B90A98000F02D93 /* PBXTargetDependency */,
+			);
+			name = iTunesRemote;
+			productName = iTunesRemote;
+			productReference = B508A90A1B90987500E3D610 /* iTunesRemote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B508A91D1B90987500E3D610 /* iTunesRemoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B508A95C1B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemoteTests" */;
+			buildPhases = (
+				B508A91A1B90987500E3D610 /* Sources */,
+				B508A91B1B90987500E3D610 /* Frameworks */,
+				B508A91C1B90987500E3D610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B508A9201B90987500E3D610 /* PBXTargetDependency */,
+			);
+			name = iTunesRemoteTests;
+			productName = iTunesRemoteTests;
+			productReference = B508A91E1B90987500E3D610 /* iTunesRemoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B508A9281B90987500E3D610 /* iTunesRemoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B508A95F1B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemoteUITests" */;
+			buildPhases = (
+				B508A9251B90987500E3D610 /* Sources */,
+				B508A9261B90987500E3D610 /* Frameworks */,
+				B508A9271B90987500E3D610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B508A92B1B90987500E3D610 /* PBXTargetDependency */,
+			);
+			name = iTunesRemoteUITests;
+			productName = iTunesRemoteUITests;
+			productReference = B508A9291B90987500E3D610 /* iTunesRemoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		B508A9311B90987500E3D610 /* iTunesRemote WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B508A9551B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit App" */;
+			buildPhases = (
+				B508A9301B90987500E3D610 /* Resources */,
+				B508A9541B90987500E3D610 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B508A9441B90987500E3D610 /* PBXTargetDependency */,
+			);
+			name = "iTunesRemote WatchKit App";
+			productName = "iTunesRemote WatchKit App";
+			productReference = B508A9321B90987500E3D610 /* iTunesRemote WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		B508A9401B90987500E3D610 /* iTunesRemote WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B508A9511B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit Extension" */;
+			buildPhases = (
+				B508A93D1B90987500E3D610 /* Sources */,
+				B508A93E1B90987500E3D610 /* Frameworks */,
+				B508A93F1B90987500E3D610 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iTunesRemote WatchKit Extension";
+			productName = "iTunesRemote WatchKit Extension";
+			productReference = B508A9411B90987500E3D610 /* iTunesRemote WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		B5BE75EA1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE760B1B90A98000F02D93 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit 1 Extension" */;
+			buildPhases = (
+				B5BE75E71B90A97F00F02D93 /* Sources */,
+				B5BE75E81B90A97F00F02D93 /* Frameworks */,
+				B5BE75E91B90A97F00F02D93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B5BE75FB1B90A98000F02D93 /* PBXTargetDependency */,
+			);
+			name = "iTunesRemote WatchKit 1 Extension";
+			productName = "iTunesRemote WatchKit 1 Extension";
+			productReference = B5BE75EB1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		B5BE75F71B90A97F00F02D93 /* iTunesRemote WatchKit 1 App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5BE760A1B90A98000F02D93 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit 1 App" */;
+			buildPhases = (
+				B5BE75F61B90A97F00F02D93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iTunesRemote WatchKit 1 App";
+			productName = "iTunesRemote WatchKit 1 App";
+			productReference = B5BE75F81B90A97F00F02D93 /* iTunesRemote WatchKit 1 App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B508A9021B90987500E3D610 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Ben Navetta";
+				TargetAttributes = {
+					B508A9091B90987500E3D610 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B508A91D1B90987500E3D610 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = B508A9091B90987500E3D610;
+					};
+					B508A9281B90987500E3D610 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = B508A9091B90987500E3D610;
+					};
+					B508A9311B90987500E3D610 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B508A9401B90987500E3D610 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B5BE75EA1B90A97F00F02D93 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					B5BE75F71B90A97F00F02D93 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = B508A9051B90987500E3D610 /* Build configuration list for PBXProject "iTunesRemote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B508A9011B90987500E3D610;
+			productRefGroup = B508A90B1B90987500E3D610 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B508A9091B90987500E3D610 /* iTunesRemote */,
+				B508A91D1B90987500E3D610 /* iTunesRemoteTests */,
+				B508A9281B90987500E3D610 /* iTunesRemoteUITests */,
+				B508A9311B90987500E3D610 /* iTunesRemote WatchKit App */,
+				B508A9401B90987500E3D610 /* iTunesRemote WatchKit Extension */,
+				B5BE75EA1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension */,
+				B5BE75F71B90A97F00F02D93 /* iTunesRemote WatchKit 1 App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B508A9081B90987500E3D610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B508A9181B90987500E3D610 /* LaunchScreen.storyboard in Resources */,
+				B508A9151B90987500E3D610 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A91C1B90987500E3D610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A9271B90987500E3D610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A9301B90987500E3D610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B508A93B1B90987500E3D610 /* Assets.xcassets in Resources */,
+				B508A9391B90987500E3D610 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A93F1B90987500E3D610 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B508A94D1B90987500E3D610 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE75E91B90A97F00F02D93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE75F41B90A97F00F02D93 /* Assets.xcassets in Resources */,
+				B5BE75F91B90A98000F02D93 /* iTunesRemote WatchKit 1 App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE75F61B90A97F00F02D93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE76011B90A98000F02D93 /* Assets.xcassets in Resources */,
+				B5BE75FF1B90A98000F02D93 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B591D1DD1B916A8F00D73D78 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B508A9061B90987500E3D610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5E666CF1B93253D0075698C /* iTunesClient.swift in Sources */,
+				B5E666CD1B92A33A0075698C /* TypeDecoders.swift in Sources */,
+				B508A90E1B90987500E3D610 /* AppDelegate.swift in Sources */,
+				B5AC3D0C1B91DC8A00980C37 /* Model.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A91A1B90987500E3D610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B508A9231B90987500E3D610 /* iTunesRemoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A9251B90987500E3D610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B508A92E1B90987500E3D610 /* iTunesRemoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B508A93D1B90987500E3D610 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B508A9491B90987500E3D610 /* ExtensionDelegate.swift in Sources */,
+				B508A9471B90987500E3D610 /* InterfaceController.swift in Sources */,
+				B508A94B1B90987500E3D610 /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5BE75E71B90A97F00F02D93 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5BE75F21B90A97F00F02D93 /* NotificationController.swift in Sources */,
+				B5BE75F01B90A97F00F02D93 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B508A9201B90987500E3D610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B508A9091B90987500E3D610 /* iTunesRemote */;
+			targetProxy = B508A91F1B90987500E3D610 /* PBXContainerItemProxy */;
+		};
+		B508A92B1B90987500E3D610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B508A9091B90987500E3D610 /* iTunesRemote */;
+			targetProxy = B508A92A1B90987500E3D610 /* PBXContainerItemProxy */;
+		};
+		B508A9351B90987500E3D610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B508A9311B90987500E3D610 /* iTunesRemote WatchKit App */;
+			targetProxy = B508A9341B90987500E3D610 /* PBXContainerItemProxy */;
+		};
+		B508A9441B90987500E3D610 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B508A9401B90987500E3D610 /* iTunesRemote WatchKit Extension */;
+			targetProxy = B508A9431B90987500E3D610 /* PBXContainerItemProxy */;
+		};
+		B5BE75FB1B90A98000F02D93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE75F71B90A97F00F02D93 /* iTunesRemote WatchKit 1 App */;
+			targetProxy = B5BE75FA1B90A98000F02D93 /* PBXContainerItemProxy */;
+		};
+		B5BE76041B90A98000F02D93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B5BE75EA1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension */;
+			targetProxy = B5BE76031B90A98000F02D93 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B508A9161B90987500E3D610 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B508A9171B90987500E3D610 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B508A9371B90987500E3D610 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B508A9381B90987500E3D610 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		B5BE75FD1B90A98000F02D93 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5BE75FE1B90A98000F02D93 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B508A94F1B90987500E3D610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos8.4;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B508A9501B90987500E3D610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos8.4;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B508A9521B90987500E3D610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "iTunesRemote WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B508A9531B90987500E3D610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "iTunesRemote WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B508A9561B90987500E3D610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = iTunesRemote_WatchKit_Extension;
+				INFOPLIST_FILE = "iTunesRemote WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		B508A9571B90987500E3D610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = iTunesRemote_WatchKit_Extension;
+				INFOPLIST_FILE = "iTunesRemote WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		B508A95A1B90987500E3D610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iTunesRemote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B508A95B1B90987500E3D610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iTunesRemote/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		B508A95D1B90987500E3D610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iTunesRemoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunesRemote.app/iTunesRemote";
+			};
+			name = Debug;
+		};
+		B508A95E1B90987500E3D610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = iTunesRemoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iTunesRemote.app/iTunesRemote";
+			};
+			name = Release;
+		};
+		B508A9601B90987500E3D610 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iTunesRemoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iTunesRemote;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		B508A9611B90987500E3D610 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = iTunesRemoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = iTunesRemote;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+		B5BE76061B90A98000F02D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "iTunesRemote WatchKit 1 Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B5BE76071B90A98000F02D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "iTunesRemote WatchKit 1 Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		B5BE76081B90A98000F02D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = iTunesRemote_WatchKit_1_Extension;
+				INFOPLIST_FILE = "iTunesRemote WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		B5BE76091B90A98000F02D93 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = iTunesRemote_WatchKit_1_Extension;
+				INFOPLIST_FILE = "iTunesRemote WatchKit 1 App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B508A9051B90987500E3D610 /* Build configuration list for PBXProject "iTunesRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B508A94F1B90987500E3D610 /* Debug */,
+				B508A9501B90987500E3D610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B508A9511B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B508A9521B90987500E3D610 /* Debug */,
+				B508A9531B90987500E3D610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B508A9551B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B508A9561B90987500E3D610 /* Debug */,
+				B508A9571B90987500E3D610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B508A9591B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B508A95A1B90987500E3D610 /* Debug */,
+				B508A95B1B90987500E3D610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B508A95C1B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B508A95D1B90987500E3D610 /* Debug */,
+				B508A95E1B90987500E3D610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B508A95F1B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B508A9601B90987500E3D610 /* Debug */,
+				B508A9611B90987500E3D610 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE760A1B90A98000F02D93 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit 1 App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE76081B90A98000F02D93 /* Debug */,
+				B5BE76091B90A98000F02D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5BE760B1B90A98000F02D93 /* Build configuration list for PBXNativeTarget "iTunesRemote WatchKit 1 Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5BE76061B90A98000F02D93 /* Debug */,
+				B5BE76071B90A98000F02D93 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B508A9021B90987500E3D610 /* Project object */;
+}

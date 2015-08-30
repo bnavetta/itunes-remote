@@ -1,0 +1,4 @@
+github "thoughtbot/Argo" "td-swift-2"
+github "thoughtbot/Curry"
+github "Alamofire/Alamofire" ~> 2.0.0
+github "SnapKit/SnapKit" "swift-2.0"
