@@ -8,8 +8,9 @@ setup(
         'Flask ~= 0.10',
         'Flask-RESTful ~= 0.3',
         'marshmallow ~= 2.0b5',
+        'bcrypt ~= 2.0',
+        'pyobjc ~= 3.0',
         'py-tunes ~= 1.0b2',
-        'pyobjc ~= 3.0'
     ],
     entry_points={
         'console_scripts': [
