@@ -58,22 +58,22 @@ extension SongReference: CustomDebugStringConvertible {
 }
 
 struct PersistentID: CustomStringConvertible, Equatable {
-    let value: UInt
+    let value: UInt64
     
     var description: String {
         return String(self.value, radix: 16, uppercase: true)
     }
     
     init(fromHex hex: String) {
-        self.value = UInt(hex, radix: 16)!
+        self.value = UInt64(hex, radix: 16)!
     }
     
-    init(fromValue value: UInt) {
+    init(fromValue value: UInt64) {
         self.value = value
     }
     
     init(fromNumber number: NSNumber) {
-        self.value = number.unsignedLongValue;
+        self.value = number.unsignedLongLongValue;
     }
 }
 

@@ -1,4 +1,5 @@
 import atexit
+import logging
 
 from flask import Flask
 
@@ -18,9 +19,10 @@ app.register_blueprint(control.mod, url_prefix='/control')
 app.register_blueprint(library.mod, url_prefix='/library')
 
 from . import auth
+from . import ssl
 
 def run():
     advertiser = NetworkAdvertiser(type='_itunes-server._tcp', port=5000)
     atexit.register(lambda: advertiser.close())
 
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', ssl_context=ssl.create_ssl_context())

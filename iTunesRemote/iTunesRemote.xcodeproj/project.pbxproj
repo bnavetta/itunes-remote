@@ -44,6 +44,8 @@
 		B5E666CB1B929BE50075698C /* Curry.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E666CA1B929BE50075698C /* Curry.framework.dSYM */; };
 		B5E666CD1B92A33A0075698C /* TypeDecoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666CC1B92A33A0075698C /* TypeDecoders.swift */; settings = {ASSET_TAGS = (); }; };
 		B5E666CF1B93253D0075698C /* iTunesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666CE1B93253D0075698C /* iTunesClient.swift */; settings = {ASSET_TAGS = (); }; };
+		B5E666D11B9339E60075698C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666D01B9339E60075698C /* Server.swift */; settings = {ASSET_TAGS = (); }; };
+		B5E666D31B934DE30075698C /* gandalf.local.cer in Resources */ = {isa = PBXBuildFile; fileRef = B5E666D21B934DE30075698C /* gandalf.local.cer */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +201,8 @@
 		B5E666CA1B929BE50075698C /* Curry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Curry.framework.dSYM; path = Carthage/Build/iOS/Curry.framework.dSYM; sourceTree = "<group>"; };
 		B5E666CC1B92A33A0075698C /* TypeDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDecoders.swift; sourceTree = "<group>"; };
 		B5E666CE1B93253D0075698C /* iTunesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesClient.swift; sourceTree = "<group>"; };
+		B5E666D01B9339E60075698C /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		B5E666D21B934DE30075698C /* gandalf.local.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gandalf.local.cer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +296,7 @@
 				B508A9161B90987500E3D610 /* LaunchScreen.storyboard */,
 				B508A9191B90987500E3D610 /* Info.plist */,
 				B5AC3D0A1B91DC5700980C37 /* iTunesClient */,
+				B5E666D41B934DEF0075698C /* Supporting Files */,
 			);
 			path = iTunesRemote;
 			sourceTree = "<group>";
@@ -342,6 +347,7 @@
 				B5AC3D0B1B91DC8A00980C37 /* Model.swift */,
 				B5E666CC1B92A33A0075698C /* TypeDecoders.swift */,
 				B5E666CE1B93253D0075698C /* iTunesClient.swift */,
+				B5E666D01B9339E60075698C /* Server.swift */,
 			);
 			name = iTunesClient;
 			sourceTree = "<group>";
@@ -374,6 +380,14 @@
 				B5BE76021B90A98000F02D93 /* Info.plist */,
 			);
 			path = "iTunesRemote WatchKit 1 App";
+			sourceTree = "<group>";
+		};
+		B5E666D41B934DEF0075698C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B5E666D21B934DE30075698C /* gandalf.local.cer */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,6 +583,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E666D31B934DE30075698C /* gandalf.local.cer in Resources */,
 				B508A9181B90987500E3D610 /* LaunchScreen.storyboard in Resources */,
 				B508A9151B90987500E3D610 /* Assets.xcassets in Resources */,
 			);
@@ -649,6 +664,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5E666D11B9339E60075698C /* Server.swift in Sources */,
 				B5E666CF1B93253D0075698C /* iTunesClient.swift in Sources */,
 				B5E666CD1B92A33A0075698C /* TypeDecoders.swift in Sources */,
 				B508A90E1B90987500E3D610 /* AppDelegate.swift in Sources */,
