@@ -20,6 +20,10 @@
 		B508A9491B90987500E3D610 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A9481B90987500E3D610 /* ExtensionDelegate.swift */; };
 		B508A94B1B90987500E3D610 /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B508A94A1B90987500E3D610 /* GlanceController.swift */; };
 		B508A94D1B90987500E3D610 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B508A94C1B90987500E3D610 /* Assets.xcassets */; };
+		B5331FAE1B94DA4C00F94C52 /* MVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5331FAD1B94DA4C00F94C52 /* MVVM.swift */; settings = {ASSET_TAGS = (); }; };
+		B5331FB31B94EFCB00F94C52 /* UIKitMVVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5331FB21B94EFCB00F94C52 /* UIKitMVVM.swift */; settings = {ASSET_TAGS = (); }; };
+		B5331FB61B94F01700F94C52 /* MainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5331FB51B94F01700F94C52 /* MainScreen.swift */; settings = {ASSET_TAGS = (); }; };
+		B5331FB81B94F03A00F94C52 /* MainScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5331FB71B94F03A00F94C52 /* MainScreen.xib */; settings = {ASSET_TAGS = (); }; };
 		B591D1D41B916A5C00D73D78 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D31B916A5C00D73D78 /* Alamofire.framework */; };
 		B591D1D51B916A5C00D73D78 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D31B916A5C00D73D78 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B591D1D81B916A6300D73D78 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B591D1D71B916A6300D73D78 /* Argo.framework */; };
@@ -178,6 +182,11 @@
 		B508A94A1B90987500E3D610 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		B508A94C1B90987500E3D610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B508A94E1B90987500E3D610 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5331FAD1B94DA4C00F94C52 /* MVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVM.swift; sourceTree = "<group>"; };
+		B5331FAF1B94EB6400F94C52 /* iTunesRemote-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTunesRemote-Bridging-Header.h"; sourceTree = "<group>"; };
+		B5331FB21B94EFCB00F94C52 /* UIKitMVVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitMVVM.swift; sourceTree = "<group>"; };
+		B5331FB51B94F01700F94C52 /* MainScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreen.swift; sourceTree = "<group>"; };
+		B5331FB71B94F03A00F94C52 /* MainScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainScreen.xib; sourceTree = "<group>"; };
 		B591D1D31B916A5C00D73D78 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		B591D1D71B916A6300D73D78 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/iOS/Argo.framework; sourceTree = "<group>"; };
 		B591D1DA1B916A6A00D73D78 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
@@ -291,11 +300,14 @@
 		B508A90C1B90987500E3D610 /* iTunesRemote */ = {
 			isa = PBXGroup;
 			children = (
+				B5331FAF1B94EB6400F94C52 /* iTunesRemote-Bridging-Header.h */,
 				B508A90D1B90987500E3D610 /* AppDelegate.swift */,
 				B508A9141B90987500E3D610 /* Assets.xcassets */,
 				B508A9161B90987500E3D610 /* LaunchScreen.storyboard */,
 				B508A9191B90987500E3D610 /* Info.plist */,
+				B5331FB41B94F00A00F94C52 /* Screens */,
 				B5AC3D0A1B91DC5700980C37 /* iTunesClient */,
+				B5331FAA1B94D9A200F94C52 /* MVVM Support */,
 				B5E666D41B934DEF0075698C /* Supporting Files */,
 			);
 			path = iTunesRemote;
@@ -339,6 +351,24 @@
 				B508A94E1B90987500E3D610 /* Info.plist */,
 			);
 			path = "iTunesRemote WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B5331FAA1B94D9A200F94C52 /* MVVM Support */ = {
+			isa = PBXGroup;
+			children = (
+				B5331FAD1B94DA4C00F94C52 /* MVVM.swift */,
+				B5331FB21B94EFCB00F94C52 /* UIKitMVVM.swift */,
+			);
+			name = "MVVM Support";
+			sourceTree = "<group>";
+		};
+		B5331FB41B94F00A00F94C52 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				B5331FB51B94F01700F94C52 /* MainScreen.swift */,
+				B5331FB71B94F03A00F94C52 /* MainScreen.xib */,
+			);
+			name = Screens;
 			sourceTree = "<group>";
 		};
 		B5AC3D0A1B91DC5700980C37 /* iTunesClient */ = {
@@ -526,6 +556,7 @@
 		B508A9021B90987500E3D610 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ben Navetta";
 				TargetAttributes = {
@@ -583,6 +614,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5331FB81B94F03A00F94C52 /* MainScreen.xib in Resources */,
 				B5E666D31B934DE30075698C /* gandalf.local.cer in Resources */,
 				B508A9181B90987500E3D610 /* LaunchScreen.storyboard in Resources */,
 				B508A9151B90987500E3D610 /* Assets.xcassets in Resources */,
@@ -664,7 +696,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5331FB61B94F01700F94C52 /* MainScreen.swift in Sources */,
 				B5E666D11B9339E60075698C /* Server.swift in Sources */,
+				B5331FAE1B94DA4C00F94C52 /* MVVM.swift in Sources */,
+				B5331FB31B94EFCB00F94C52 /* UIKitMVVM.swift in Sources */,
 				B5E666CF1B93253D0075698C /* iTunesClient.swift in Sources */,
 				B5E666CD1B92A33A0075698C /* TypeDecoders.swift in Sources */,
 				B508A90E1B90987500E3D610 /* AppDelegate.swift in Sources */,
@@ -917,6 +952,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -927,6 +963,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iTunesRemote/iTunesRemote-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -934,6 +972,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -944,6 +983,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bennavetta.iTunesRemote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iTunesRemote/iTunesRemote-Bridging-Header.h";
 			};
 			name = Release;
 		};

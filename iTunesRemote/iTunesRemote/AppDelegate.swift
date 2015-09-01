@@ -15,61 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var manager: Alamofire.Manager?
-    var client: iTunesClient?
-    let server = Server(baseURL: "https://gandalf.local:5000", username: "ben", password: "avoid halo road")
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.backgroundColor = UIColor.whiteColor()
-        window?.rootViewController = UIViewController(nibName: nil, bundle: nil)
-        window?.makeKeyAndVisible()
-        
-        //        let label = UILabel()
-        //        label.text = "Hello, World!"
-        //        label.sizeToFit()
-        //        window?.addSubview(label)
-        
-        let button = UIButton(type: UIButtonType.RoundedRect)
-        button.setTitle("Click Me!", forState: .Normal)
-        button.addTarget(self, action: "fireRequest", forControlEvents: .TouchUpInside)
-        button.sizeToFit()
-        
-        window?.rootViewController = UIViewController()
-        window?.rootViewController?.view.addSubview(button)
-        
+                
         print("Cache size: \(NSURLCache.sharedURLCache().currentDiskUsage)")
         
+        let navigationController = UINavigationController()
+        window?.rootViewController = navigationController
+        var navigator = UIKitNavigator(controller: navigationController)
+        navigator.goTo(MainViewModel())
         
-        let certs = ServerTrustPolicy.certificatesInBundle()
-        let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "gandalf.local": ServerTrustPolicy.PinCertificates(
-                certificates: certs,
-                validateCertificateChain: true,
-                validateHost: true
-            )
-        ]
-        self.manager = Alamofire.Manager(configuration: NSURLSessionConfiguration.defaultSessionConfiguration(), serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies))
-
-        self.client = iTunesClient(manager: self.manager!, server: server)
+        window?.makeKeyAndVisible()
         
         return true
-    }
-    
-    @objc
-    func fireRequest() {
-        client!.artist("U2") { (artist) -> Void in
-            switch artist {
-            case .Success(let artist):
-                debugPrint(artist)
-                break
-            case .Failure(let data, let error):
-                debugPrint(error)
-                debugPrint(NSString(data: data!, encoding: NSUTF8StringEncoding))
-                break
-            }
-        }
-    
     }
 
     func applicationWillResignActive(application: UIApplication) {

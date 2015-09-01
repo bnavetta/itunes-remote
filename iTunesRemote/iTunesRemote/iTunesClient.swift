@@ -88,6 +88,22 @@ class iTunesClient {
         self.server = server
     }
     
+    convenience init(server: Server) {
+        let certs = ServerTrustPolicy.certificatesInBundle()
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "gandalf.local": ServerTrustPolicy.PinCertificates(
+                certificates: certs,
+                validateCertificateChain: true,
+                validateHost: true
+            )
+        ]
+        self.init(manager:
+            Alamofire.Manager(
+                configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+                serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)),
+            server: server)
+    }
+    
     // TODO: ReactiveCocoa API (include error info as well)
     func artist(name: String, completionHandler: Result<Artist> -> Void) {
         Router.server = server
