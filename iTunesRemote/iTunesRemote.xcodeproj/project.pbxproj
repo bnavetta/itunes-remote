@@ -56,6 +56,7 @@
 		B5E666CF1B93253D0075698C /* iTunesClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666CE1B93253D0075698C /* iTunesClient.swift */; settings = {ASSET_TAGS = (); }; };
 		B5E666D11B9339E60075698C /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E666D01B9339E60075698C /* Server.swift */; settings = {ASSET_TAGS = (); }; };
 		B5E666D31B934DE30075698C /* gandalf.local.cer in Resources */ = {isa = PBXBuildFile; fileRef = B5E666D21B934DE30075698C /* gandalf.local.cer */; settings = {ASSET_TAGS = (); }; };
+		C8380C62E3DA5122A6950A42 /* libPods-iTunesRemote.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C342381F0ABD9FE5BC6A702 /* libPods-iTunesRemote.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -171,6 +172,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		291CB0B03C48261854AFC637 /* Pods-iTunesRemote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRemote.release.xcconfig"; path = "Pods/Target Support Files/Pods-iTunesRemote/Pods-iTunesRemote.release.xcconfig"; sourceTree = "<group>"; };
+		2C342381F0ABD9FE5BC6A702 /* libPods-iTunesRemote.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iTunesRemote.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B508A90A1B90987500E3D610 /* iTunesRemote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesRemote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B508A90D1B90987500E3D610 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B508A9141B90987500E3D610 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -226,6 +229,7 @@
 		B5E666CE1B93253D0075698C /* iTunesClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesClient.swift; sourceTree = "<group>"; };
 		B5E666D01B9339E60075698C /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		B5E666D21B934DE30075698C /* gandalf.local.cer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gandalf.local.cer; sourceTree = "<group>"; };
+		BCE711E6F74CBB0E2F2387A0 /* Pods-iTunesRemote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iTunesRemote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iTunesRemote/Pods-iTunesRemote.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 				B5C160981B9546110078FC6E /* Result.framework in Frameworks */,
 				B591D1D81B916A6300D73D78 /* Argo.framework in Frameworks */,
 				B5C160961B9546110078FC6E /* ReactiveCocoa.framework in Frameworks */,
+				C8380C62E3DA5122A6950A42 /* libPods-iTunesRemote.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +280,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		31C8A82733D7261E665C48F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C342381F0ABD9FE5BC6A702 /* libPods-iTunesRemote.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7AA9555C2561A5232A693798 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BCE711E6F74CBB0E2F2387A0 /* Pods-iTunesRemote.debug.xcconfig */,
+				291CB0B03C48261854AFC637 /* Pods-iTunesRemote.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B508A9011B90987500E3D610 = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +322,8 @@
 				B5BE75EC1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension */,
 				B5BE75FC1B90A98000F02D93 /* iTunesRemote WatchKit 1 App */,
 				B508A90B1B90987500E3D610 /* Products */,
+				7AA9555C2561A5232A693798 /* Pods */,
+				31C8A82733D7261E665C48F2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -447,6 +471,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B508A9591B90987500E3D610 /* Build configuration list for PBXNativeTarget "iTunesRemote" */;
 			buildPhases = (
+				FAD05B9A29D6FCE130B5E89A /* Check Pods Manifest.lock */,
 				B508A9061B90987500E3D610 /* Sources */,
 				B508A9071B90987500E3D610 /* Frameworks */,
 				B508A9081B90987500E3D610 /* Resources */,
@@ -455,6 +480,7 @@
 				B591D1D61B916A5C00D73D78 /* Embed Frameworks */,
 				B591D1DD1B916A8F00D73D78 /* ShellScript */,
 				B591D1E91B91CE7400D73D78 /* CopyFiles */,
+				F52BA1BE5CEFDF47034AD9E5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -708,6 +734,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		F52BA1BE5CEFDF47034AD9E5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iTunesRemote/Pods-iTunesRemote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAD05B9A29D6FCE130B5E89A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -970,6 +1026,7 @@
 		};
 		B508A95A1B90987500E3D610 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BCE711E6F74CBB0E2F2387A0 /* Pods-iTunesRemote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -990,6 +1047,7 @@
 		};
 		B508A95B1B90987500E3D610 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 291CB0B03C48261854AFC637 /* Pods-iTunesRemote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

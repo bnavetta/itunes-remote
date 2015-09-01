@@ -89,19 +89,11 @@ class iTunesClient {
         self.server = server
     }
     
-    convenience init(server: Server) {
-        let certs = ServerTrustPolicy.certificatesInBundle()
-        let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "gandalf.local": ServerTrustPolicy.PinCertificates(
-                certificates: certs,
-                validateCertificateChain: true,
-                validateHost: true
-            )
-        ]
+    convenience init(server: Server, certStore: CertificateStore) {
         self.init(manager:
             Alamofire.Manager(
                 configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
-                serverTrustPolicyManager: ServerTrustPolicyManager(policies: serverTrustPolicies)),
+                serverTrustPolicyManager: ServerTrustPolicyManager(policies: certStore.createServerTrustPolicies())),
             server: server)
     }
     
