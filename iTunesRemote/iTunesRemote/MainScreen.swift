@@ -8,19 +8,13 @@
 
 import Foundation
 import UIKit
+import ReactiveCocoa
 
 class MainViewModel: ViewModel {
     private let client = iTunesClient(server: Server(baseURL: "https://gandalf.local:5000", username: "ben", password: "avoid halo road"))
     
     func testClient() {
-        self.client.artist("U2") { artist in
-            switch artist {
-            case .Success(let artist):
-                debugPrint(artist)
-            case .Failure(_, let error):
-                debugPrint(error)
-            }
-        }
+        self.client.artist("U2").start(next: { artist in debugPrint(artist) }, error: { error in debugPrint(error) })
     }
 }
 

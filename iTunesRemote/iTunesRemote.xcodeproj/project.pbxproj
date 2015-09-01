@@ -43,6 +43,12 @@
 		B5BE75FF1B90A98000F02D93 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BE75FD1B90A98000F02D93 /* Interface.storyboard */; };
 		B5BE76011B90A98000F02D93 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5BE76001B90A98000F02D93 /* Assets.xcassets */; };
 		B5BE76051B90A98000F02D93 /* iTunesRemote WatchKit 1 Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B5BE75EB1B90A97F00F02D93 /* iTunesRemote WatchKit 1 Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B5C160961B9546110078FC6E /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C160941B9546110078FC6E /* ReactiveCocoa.framework */; };
+		B5C160971B9546110078FC6E /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5C160941B9546110078FC6E /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5C160981B9546110078FC6E /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C160951B9546110078FC6E /* Result.framework */; };
+		B5C160991B9546110078FC6E /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5C160951B9546110078FC6E /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B5C1609C1B9546220078FC6E /* ReactiveCocoa.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5C1609A1B9546220078FC6E /* ReactiveCocoa.framework.dSYM */; };
+		B5C1609D1B9546220078FC6E /* Result.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5C1609B1B9546220078FC6E /* Result.framework.dSYM */; };
 		B5E666C81B929BD10075698C /* Curry.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5E666C71B929BD10075698C /* Curry.framework */; };
 		B5E666C91B929BD10075698C /* Curry.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5E666C71B929BD10075698C /* Curry.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5E666CB1B929BE50075698C /* Curry.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = B5E666CA1B929BE50075698C /* Curry.framework.dSYM */; };
@@ -129,7 +135,9 @@
 				B5E666C91B929BD10075698C /* Curry.framework in Embed Frameworks */,
 				B591D1DC1B916A6A00D73D78 /* SnapKit.framework in Embed Frameworks */,
 				B591D1D51B916A5C00D73D78 /* Alamofire.framework in Embed Frameworks */,
+				B5C160991B9546110078FC6E /* Result.framework in Embed Frameworks */,
 				B591D1D91B916A6300D73D78 /* Argo.framework in Embed Frameworks */,
+				B5C160971B9546110078FC6E /* ReactiveCocoa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -140,6 +148,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				B5C1609C1B9546220078FC6E /* ReactiveCocoa.framework.dSYM in CopyFiles */,
+				B5C1609D1B9546220078FC6E /* Result.framework.dSYM in CopyFiles */,
 				B591D1ED1B91CE7E00D73D78 /* Alamofire.framework.dSYM in CopyFiles */,
 				B591D1EE1B91CE7E00D73D78 /* Argo.framework.dSYM in CopyFiles */,
 				B5E666CB1B929BE50075698C /* Curry.framework.dSYM in CopyFiles */,
@@ -206,6 +216,10 @@
 		B5BE75FE1B90A98000F02D93 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		B5BE76001B90A98000F02D93 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5BE76021B90A98000F02D93 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5C160941B9546110078FC6E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		B5C160951B9546110078FC6E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		B5C1609A1B9546220078FC6E /* ReactiveCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = ReactiveCocoa.framework.dSYM; path = Carthage/Build/iOS/ReactiveCocoa.framework.dSYM; sourceTree = "<group>"; };
+		B5C1609B1B9546220078FC6E /* Result.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Result.framework.dSYM; path = Carthage/Build/iOS/Result.framework.dSYM; sourceTree = "<group>"; };
 		B5E666C71B929BD10075698C /* Curry.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Curry.framework; path = Carthage/Build/iOS/Curry.framework; sourceTree = "<group>"; };
 		B5E666CA1B929BE50075698C /* Curry.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Curry.framework.dSYM; path = Carthage/Build/iOS/Curry.framework.dSYM; sourceTree = "<group>"; };
 		B5E666CC1B92A33A0075698C /* TypeDecoders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TypeDecoders.swift; sourceTree = "<group>"; };
@@ -222,7 +236,9 @@
 				B5E666C81B929BD10075698C /* Curry.framework in Frameworks */,
 				B591D1DB1B916A6A00D73D78 /* SnapKit.framework in Frameworks */,
 				B591D1D41B916A5C00D73D78 /* Alamofire.framework in Frameworks */,
+				B5C160981B9546110078FC6E /* Result.framework in Frameworks */,
 				B591D1D81B916A6300D73D78 /* Argo.framework in Frameworks */,
+				B5C160961B9546110078FC6E /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,12 +281,16 @@
 				B591D1EA1B91CE7E00D73D78 /* Alamofire.framework.dSYM */,
 				B591D1EB1B91CE7E00D73D78 /* Argo.framework.dSYM */,
 				B5E666CA1B929BE50075698C /* Curry.framework.dSYM */,
+				B5C1609A1B9546220078FC6E /* ReactiveCocoa.framework.dSYM */,
+				B5C1609B1B9546220078FC6E /* Result.framework.dSYM */,
 				B591D1EC1B91CE7E00D73D78 /* SnapKit.framework.dSYM */,
 				B591D1D31B916A5C00D73D78 /* Alamofire.framework */,
 				B591D1D71B916A6300D73D78 /* Argo.framework */,
 				B5E666C71B929BD10075698C /* Curry.framework */,
 				B5AC3D061B91D9C900980C37 /* Nimble.framework */,
 				B5AC3D071B91D9C900980C37 /* Quick.framework */,
+				B5C160941B9546110078FC6E /* ReactiveCocoa.framework */,
+				B5C160951B9546110078FC6E /* Result.framework */,
 				B591D1DA1B916A6A00D73D78 /* SnapKit.framework */,
 				B508A90C1B90987500E3D610 /* iTunesRemote */,
 				B508A9211B90987500E3D610 /* iTunesRemoteTests */,

@@ -10,6 +10,7 @@ import Foundation
 
 import Alamofire
 import Argo
+import ReactiveCocoa
 
 // https://github.com/Alamofire/Alamofire/tree/swift-2.0#generic-response-object-serialization
 extension Request {
@@ -39,7 +40,7 @@ extension Request {
 }
 
 enum Router: URLRequestConvertible {
-    static var server: Server!
+    static var server: Server! // TODO: this is a race condition waiting to happen
     
     case GetArtist(String)
     
@@ -104,12 +105,18 @@ class iTunesClient {
             server: server)
     }
     
-    // TODO: ReactiveCocoa API (include error info as well)
-    func artist(name: String, completionHandler: Result<Artist> -> Void) {
-        Router.server = server
-        self.manager.request(Router.GetArtist(name))
-            .responseObject { (_, _, result: Result<Artist>) -> Void in
-                completionHandler(result)
+    func artist(name: String) -> SignalProducer<Artist, NSError> {
+        return SignalProducer { observer, disposable in
+            Router.server = self.server
+            self.manager.request(Router.GetArtist(name)).responseObject { (_, _, result: Alamofire.Result<Artist>) in
+                switch result {
+                case .Success(let artist):
+                    observer(Event.Next(artist))
+                case .Failure(_, let error):
+                    observer(Event.Error(error as NSError))
+                }
+                observer(Event.Completed)
+            }
         }
     }
 }
